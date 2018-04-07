@@ -40,8 +40,16 @@ class register extends Controller
      
         $id = \DB::table('crud_table')->insertGetId(['first_name' => $first_name , 'last_name'=> $last_name,
             'gender' => $gender,'age'=>$age,'email_id' => $email_id,'unique_id'=>'Laravel']);
+        
+        $pid = \DB::table('relation_table')->insertGetId(['username' => null, 'crudid'=> $id]);
+        
         echo "The student ". $first_name." has been inserted with the id ".$id;
-        echo "<br><br><br>";
+        echo '<br>'."In relation_table id ".$pid. " has been inserted with other fields set to null" ;
+         echo "<br><br><br>";
+         
+        //To update in relation table
+        //\DB::table('relation_table')->where('crudid', $id)->update(['username' => 'Crud Parent']);
+       
         
         echo "<a href='/laravel/test_project/public'>Home</a>";
         \Log::channel('single')->info('The user has registered the student with id' .$id); //For specified channel
@@ -107,6 +115,17 @@ class register extends Controller
         
         echo '<br>';
         //end of project's view code
+        
+        
+        /*//To view both tables(using join)
+        $users = \DB::table('crud_table')
+            ->join('relation_table', 'crud_table.id', '=', 'relation_table.crudid')
+            ->get();
+        echo $users;
+        foreach ($users as $user) {
+                echo '<br>'.$user->id;
+            }*/
+        
      
         
         /*//Checking multiple select queries

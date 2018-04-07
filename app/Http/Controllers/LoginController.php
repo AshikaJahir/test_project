@@ -21,10 +21,16 @@ class LoginController extends Controller
         
         if(isset($user))
         {
+            
             if($user->first_name == $first_name)
            {
+                
                 $request->session()->put('user',$first_name);
                 return redirect('/');
+           }
+           else
+           {
+               echo 'Password is incorrect';
            }
         }
         else
