@@ -91,15 +91,21 @@ Route::get('view', function (Request $request) {
 //Route::method_name('action_name_in _form','controller_name@function_name_inside_controller');
 
 //Below are directed to moddlewares and controllers
-Route::post('register','register@register')->name('register')->middleware('Register'); 
-Route::post('delete','register@delete')->name('delete');
-Route::get('access','register@view')->name('view');
-Route::post('update','register@update')->name('update')->middleware('Register');
+/*Route::post('register','CRUD\register@register')->name('register')->middleware('Register'); 
+Route::post('delete','CRUD\register@delete')->name('delete');
+Route::get('access','CRUD\register@view')->name('view');
+Route::post('update','CRUD\register@update')->name('update')->middleware('Register');*/
 
+
+//Grouping controllers
+Route::group(['namespace' => '\CRUD'], function(){
+            Route::post('register','register@register')->name('register')->middleware('Register'); 
+            Route::post('delete','register@delete')->name('delete');
+            Route::get('access','register@view')->name('view');
+            Route::post('update','register@update')->name('update')->middleware('Register');
+        });
+        
 Route::post('login','LoginController@login')->name('login');
-
-
-
 Route::any('noaccess', function(){
     return view('noaccess');
 });
