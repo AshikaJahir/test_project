@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Routing;
 
+use App\Helpers\Functions;
+
 Route::get('/', function (Request $request) {
     //$request->session()->put('user','A');
     // Session::put('user','Admin');
@@ -128,5 +130,19 @@ Route::get('reg_welcome_copy/{pageName}', function ($pageName) {
     echo $pageName;
 //return view('register');
 });
+
+//For checking Error Handling
+Route::get('error','ErrorHandlingController@check');
+
+//For checking Custom Function
+Route::any('customFunction', function(){
+    hello();
+});
+
+//For checking Custom Class
+Route::any('customClass', function(){
+    (new App\Classes\Dog)->bark();
+});
+
 
 
