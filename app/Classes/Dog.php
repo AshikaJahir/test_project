@@ -1,5 +1,5 @@
 <?php
-namespace App\Classes;
+namespace TestProject\Classes;
 
 Class Dog{
     

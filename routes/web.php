@@ -14,10 +14,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Routing;
 
-use App\Exceptions\CustomException;
-use App\Exceptions\QueryException;
-use App\Exceptions\CustomReportException;
-use App\Exceptions\CustomInbuiltReportException;
+use TestProject\Exceptions\CustomException;
+use TestProject\Exceptions\QueryException;
+use TestProject\Exceptions\CustomReportException;
+use TestProject\Exceptions\CustomInbuiltReportException;
 
 
 Route::get('/', function (Request $request) {
@@ -142,7 +142,7 @@ Route::get('error12','ErrorHandlingController@check3');
 Route::any('error', function(){
     try
     {
-        App\User::find(1);
+        TestProject\User::find(1);
     } catch (Exception $e) {
             throw new CustomException($e->getMessage());
     }

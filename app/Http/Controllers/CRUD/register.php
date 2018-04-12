@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\CRUD;
-use App\Http\Controllers\Controller;
+namespace TestProject\Http\Controllers\CRUD;
+use TestProject\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -83,7 +83,7 @@ class register extends Controller
 
         //using model
         
-       /* $crud = \App\crud_table::all();
+       /* $crud = \TestProject\crud_table::all();
         print_r($crud);
         foreach ($crud as $detail)
         {

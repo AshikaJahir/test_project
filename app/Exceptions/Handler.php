@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Exceptions;
+namespace TestProject\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-use App\Exceptions\CustomException;
-use App\Exceptions\QueryException;
+use TestProject\Exceptions\CustomException;
+use TestProject\Exceptions\QueryException;
 
 class Handler extends ExceptionHandler
 {

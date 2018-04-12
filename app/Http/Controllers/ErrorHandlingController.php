@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace TestProject\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Exceptions\CustomInbuiltReportException;
+use TestProject\Exceptions\CustomInbuiltReportException;
 
 
 //Can handle exception in three ways
