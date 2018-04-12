@@ -16,6 +16,8 @@ use Illuminate\Routing;
 
 use App\Exceptions\CustomException;
 use App\Exceptions\QueryException;
+use App\Exceptions\CustomReportException;
+use App\Exceptions\CustomInbuiltReportException;
 
 
 Route::get('/', function (Request $request) {
@@ -133,7 +135,7 @@ Route::get('reg_welcome_copy/{pageName}', function ($pageName) {
 //return view('register');
 });
 
-//For checking Error Handling
+//For checking Error Handling Custom Rendering
 Route::get('error1','ErrorHandlingController@check');//does not work
 Route::any('error', function(){
     try
@@ -159,6 +161,15 @@ Route::get('QueryException', function () {
     return view('QueryException');
 });
 
+//For checking Error Handling Custom Reporting
+Route::any('error3', function(){    
+        throw new CustomReportException;
+            
+ });
+ Route::any('error4', function(){    
+        throw new CustomInbuiltReportException;
+            
+ });
 //For checking Custom Function
 Route::any('customFunction', function(){
     welcome();
