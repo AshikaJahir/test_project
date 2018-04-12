@@ -136,7 +136,7 @@ Route::get('reg_welcome_copy/{pageName}', function ($pageName) {
 });
 
 //For checking Error Handling Custom Rendering
-Route::get('error1','ErrorHandlingController@check');//does not work
+Route::get('error1','ErrorHandlingController@check');
 Route::any('error', function(){
     try
     {
