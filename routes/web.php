@@ -136,7 +136,7 @@ Route::get('error','ErrorHandlingController@check');
 
 //For checking Custom Function
 Route::any('customFunction', function(){
-    hello();
+    welcome();
 });
 
 //For checking Custom Class
