@@ -5,6 +5,9 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use App\Exceptions\CustomException;
+use App\Exceptions\QueryException;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -36,6 +39,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        
         parent::report($exception);
     }
 
@@ -48,6 +52,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof CustomException) {
+            return redirect()->to('CustomException');
+        }
+        if ($exception instanceof QueryException) {
+            return redirect()->to('QueryException');
+        }
         return parent::render($request, $exception);
     }
 }

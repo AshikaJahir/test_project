@@ -14,7 +14,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Routing;
 
-use App\Helpers\Functions;
+use App\Exceptions\CustomException;
+use App\Exceptions\QueryException;
+
 
 Route::get('/', function (Request $request) {
     //$request->session()->put('user','A');
@@ -132,7 +134,30 @@ Route::get('reg_welcome_copy/{pageName}', function ($pageName) {
 });
 
 //For checking Error Handling
-Route::get('error','ErrorHandlingController@check');
+Route::get('error1','ErrorHandlingController@check');//does not work
+Route::any('error', function(){
+    try
+    {
+        App\User::find(1);
+    } catch (Exception $e) {
+            throw new CustomException($e->getMessage());
+    }
+});
+Route::any('error2', function(){
+    try
+            {
+                \DB::table('crud')->where('email_id','$email_id')->first();//table name is wrong
+            } catch (Exception $e) {
+                throw new QueryException($e->getMessage());
+            }
+ });
+ //Routes to exception pages
+Route::get('CustomException', function () {
+    return view('CustomException');
+});
+Route::get('QueryException', function () {
+    return view('QueryException');
+});
 
 //For checking Custom Function
 Route::any('customFunction', function(){
