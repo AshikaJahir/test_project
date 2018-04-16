@@ -93,6 +93,8 @@
                     <a href="{{$_SERVER['REQUEST_URI']}}update">update</a>
                     <a href="{{$_SERVER['REQUEST_URI']}}delete">Delete</a>
                     
+                    <a href="{{$_SERVER['REQUEST_URI']}}posts">Posts</a>
+                    
                     
                     <!--<a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/laravel/test_project/app/Http/Controllers/register.php</file>
-            <file>file:/D:/xampp/htdocs/laravel/test_project/app/Http/Controllers/SessionController.php</file>
-            <file>file:/D:/xampp/htdocs/laravel/test_project/app/Http/Controllers/LoginController.php</file>
+            <file>file:/D:/xampp/htdocs/laravel/test_project/app/Post.php</file>
+            <file>file:/D:/xampp/htdocs/laravel/test_project/database/migrations/2018_04_16_054736_create_posts_table.php</file>
+            <file>file:/D:/xampp/htdocs/laravel/test_project/app/Http/Controllers/PostsController.php</file>
+            <file>file:/D:/xampp/htdocs/laravel/test_project/routes/web.php</file>
         </group>
     </open-files>
 </project-private>

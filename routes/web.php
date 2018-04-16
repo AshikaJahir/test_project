@@ -181,6 +181,13 @@ Route::any('customFunction', function(){
 Route::any('customClass', function(){
     (new App\Classes\Dog)->bark();
 });
-
+//For Checking Migrationsand Models
+Route::resource('posts', 'Postscontroller');
+/*Route::post('posts', [
+    'uses' => 'PostsController@store'
+  ]);*/
+Route::post('create','PostsController@store');
+Route::put('{id}/edit','PostsController@update');
+Route::DELETE('{id}/delete','PostsController@destroy');
 
 
