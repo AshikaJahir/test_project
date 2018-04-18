@@ -191,3 +191,6 @@ Route::put('{id}/edit','PostsController@update');
 Route::DELETE('{id}/delete','PostsController@destroy');
 
 
+//For Repository Implementation
+//App::bind('TestProject\Repositories\Todo\TodoRepository','TestProject\Repositories\Todo\EloquentTodo');
+Route::get('getTodo','TodoController@getAllTodos');
