@@ -15,6 +15,7 @@ class FileUploadController extends Controller
         //Storage::put('public/uploaded_files', $request->file('image'));
         
         //TO STORE WITH FILENAME ALONG WITH TIME FOR BEING UNIQUE
+        \date_default_timezone_set('Asia/Kolkata');
             //Geting the file name with extension
             $fileNameWithExt = $request->file('image')->getClientOriginalName();            
             //Getting just the filename

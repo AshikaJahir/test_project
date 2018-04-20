@@ -48,7 +48,7 @@ class PostsController extends Controller
             'body'=>'required',
             'cover_image' => 'image|nullable|max:1999' //image makes sure it is jpeg.jpj format and it can be null and the file name is limited to store in apache
             ]);
-        
+            \date_default_timezone_set('Asia/Kolkata');
         //Handle the file
         if($request->hasfile('cover_image')){
             //Geting the file name with extension
@@ -58,7 +58,7 @@ class PostsController extends Controller
             //Getting just the extension
             $extension = $request->file('cover_image')->getClientOriginalExtension();            
             //Filename to store
-            $fileNameToStore = $fileName.'_'.time().'.'.$extension;            
+            $fileNameToStore = $fileName.'_'.date("Y-m-d_H-i-s").'.'.$extension;            
             //Upload the image
             $path = $request->file('cover_image')->storeAs('public/cover_images',$fileNameToStore);
         }else{            
