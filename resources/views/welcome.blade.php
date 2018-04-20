@@ -95,6 +95,7 @@
                     
                     <a href="{{$_SERVER['REQUEST_URI']}}posts">Posts</a>
                     <a href="{{$_SERVER['REQUEST_URI']}}file">Upload File</a>
+                    <a href="{{$_SERVER['REQUEST_URI']}}fileoperations">File Operations</a>
                     
                     
                     <!--<a href="https://laravel.com/docs">Documentation</a>

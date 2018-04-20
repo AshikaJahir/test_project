@@ -200,3 +200,5 @@ Route::get('file', function(){
     return view('file_upload');
  });
 Route::post('fileupload', 'FileUploadController@uploadFile');
+//File operations
+Route::get('fileoperations', 'FileUploadController@operations');
