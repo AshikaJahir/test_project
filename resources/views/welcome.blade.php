@@ -94,6 +94,7 @@
                     <a href="{{$_SERVER['REQUEST_URI']}}delete">Delete</a>
                     
                     <a href="{{$_SERVER['REQUEST_URI']}}posts">Posts</a>
+                    <a href="{{$_SERVER['REQUEST_URI']}}file">Upload File</a>
                     
                     
                     <!--<a href="https://laravel.com/docs">Documentation</a>

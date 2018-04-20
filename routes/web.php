@@ -194,3 +194,9 @@ Route::DELETE('{id}/delete','PostsController@destroy');
 //For Repository Implementation
 //App::bind('TestProject\Repositories\Todo\TodoRepository','TestProject\Repositories\Todo\EloquentTodo');
 Route::get('getTodo','TodoController@getAllTodos');
+
+//For uploading file
+Route::get('file', function(){
+    return view('file_upload');
+ });
+Route::post('fileupload', 'FileUploadController@uploadFile');
