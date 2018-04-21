@@ -204,3 +204,10 @@ Route::post('fileupload', 'FileUploadController@uploadFile');
 Route::get('fileoperations', 'FileUploadController@operations');
 //For downloading file
 Route::get('download/{file}', 'FileUploadController@downloadFile');
+
+//For checking validator class 
+//For uploading file
+Route::get('validation', function(){
+    return view('validator');
+ });
+ Route::post('validator', 'ValidatorController@validation')->middleware('Validator');

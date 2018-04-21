@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'Login' => \TestProject\Http\Middleware\LoginMiddleware::class,
         'Register' => \TestProject\Http\Middleware\RegisterMiddleware::class,
+        'Validator' => \TestProject\Http\Middleware\ValidatorMiddleware::class,
     ];
 }
