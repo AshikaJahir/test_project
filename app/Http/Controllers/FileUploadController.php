@@ -104,6 +104,6 @@ class FileUploadController extends Controller
               'Content-Type: application/pdf',
             );
 
-        return \Response::download($filepath, $fileInDir, $headers);
+        return \Response::download($filepath, $fileInDir, $headers); //$headers is not  necessary though
     }
 }
