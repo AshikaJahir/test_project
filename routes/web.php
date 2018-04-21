@@ -202,3 +202,5 @@ Route::get('file', function(){
 Route::post('fileupload', 'FileUploadController@uploadFile');
 //File operations
 Route::get('fileoperations', 'FileUploadController@operations');
+//For downloading file
+Route::get('download/{file}', 'FileUploadController@downloadFile');

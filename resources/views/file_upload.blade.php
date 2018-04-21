@@ -16,5 +16,13 @@
             <br>
     		<button type="submit" class="btn btn-primary">Upload</button>
 		</form>
+    
+    
+            
+            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>" </input>  
+            
+    	{!! Html::link('download/SQL Injection_2018-04-20_18-05-26.txt', 'File Download in Link') !!}
+    		
+		
 
 @endsection

@@ -96,4 +96,14 @@ class FileUploadController extends Controller
         echo '<br>'.'Size of file is   '.$size .' bytes';
         
     }
+    public function downloadFile($fileInDir) {
+       
+       $filepath= public_path('storage/uploaded_files/'.$fileInDir);
+
+        $headers = array(
+              'Content-Type: application/pdf',
+            );
+
+        return \Response::download($filepath, $fileInDir, $headers);
+    }
 }
