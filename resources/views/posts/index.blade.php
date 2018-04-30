@@ -8,7 +8,7 @@
             <div class = "well">
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
-                        <img style = "width:35%" src="/storage/cover_images/{{$post->cover_image}}">
+                      <!--  <img style = "width:35%" src="/storage/cover_images/{{$post->cover_image}}">-->
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <h3><a href="posts/{{$post->id}}">{{$post->title}}</a></h3>  
