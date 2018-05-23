@@ -142,7 +142,7 @@ Route::get('error12','ErrorHandlingController@check3');
 Route::any('error', function(){
     try
     {
-        TestProject\User::find(1);
+        \DB::table('crud')->where('email_id','$email_id')->first();//table name is wrong
     } catch (Exception $e) {
             throw new CustomException($e->getMessage());
     }
@@ -179,16 +179,16 @@ Route::any('customFunction', function(){
 
 //For checking Custom Class
 Route::any('customClass', function(){
-    (new App\Classes\Dog)->bark();
+    (new TestProject\Classes\Dog)->bark();
 });
 //For Checking Migrationsand Models
 Route::resource('posts', 'Postscontroller');
 /*Route::post('posts', [
     'uses' => 'PostsController@store'
   ]);*/
-Route::post('create','PostsController@store');
-Route::put('{id}/edit','PostsController@update');
-Route::DELETE('{id}/delete','PostsController@destroy');
+Route::post('posts/create','PostsController@store');
+Route::put('posts/{id}/edit','PostsController@update');
+Route::DELETE('posts/{id}/delete','PostsController@destroy');
 
 
 //For Repository Implementation
