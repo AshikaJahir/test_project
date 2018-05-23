@@ -211,3 +211,9 @@ Route::get('validation', function(){
     return view('validator');
  });
  Route::post('validator', 'ValidatorController@validation')->middleware('Validator');
+ 
+ //Routing to another Controller within a controller
+ Route::get('action', 'ActivityController@redirect');
+ Route::get('redirectController', 'ActivityController2@display');//Redirected contoller method must also be mentioned in web.php
+  
+ 
